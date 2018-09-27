@@ -100,14 +100,16 @@ public class MdFileCopy {
     public static void main(String[] args) throws IOException {
         List<File> files=searchfFiles(new File("/media/data/Javaee/"),"md");
         String targetPath="/home/cloud/test/";
+        Iterator<File> filesListIt=files.iterator();
+
         List<String> fileName=getFileName(files);
         Iterator<String> it=fileName.iterator();
+
         int i=0;
-        for (File file:files
-             ) {
-            String absolutePath=file.getAbsolutePath();
+        while (filesListIt.hasNext()){
             while (it.hasNext()){
                 i++;
+                String absolutePath= String.valueOf(filesListIt.next());
                 fileCopy(absolutePath,targetPath+it.next());
                 System.out.println("已完成"+i+"个！");
             }
