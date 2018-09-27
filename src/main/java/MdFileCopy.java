@@ -99,18 +99,6 @@ public class MdFileCopy {
 
     public static void main(String[] args) throws IOException {
         List<File> files=searchfFiles(new File("/media/data/Javaee/"),"md");
-        /*
-        System.out.println("共找到："+files.size()+"个文件");
-        for (File file:files
-             ) {
-            System.out.println(file.getAbsolutePath());
-        }
-        FileCopy("/media/data/Javaee/JavaEE/01、第一阶段java基础/day15/day15/day15/笔记+作业/day15笔记.md");
-
-        String source="/home/cloud/test/";
-        String target="/home/cloud/test/day15笔记1.md";
-        */
-
         String targetPath="/home/cloud/test/";
         List<String> fileName=getFileName(files);
         Iterator<String> it=fileName.iterator();
